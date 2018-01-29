@@ -4,7 +4,8 @@ const
   request = require('request'),
   express = require('express'),
   body_parser = require('body-parser'),
-  app = express().use(body_parser.json());
+  app = express().use(body_parser.json()),
+  PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
@@ -25,6 +26,7 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
 
   const VERIFY_TOKEN = "7gulC1QfabXA0tqvxi8G58d1uytym1BMUfjWrZwLju2lLwZlFuuhE1GwZiGb";
+
   let mode = req.query['hub.mode'];
   let token = req.query['hub.verify_token'];
   let challenge = req.query['hub.challenge'];
