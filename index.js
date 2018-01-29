@@ -40,9 +40,13 @@ app.post('/webhook', (req, res) => {
 			// check if the event is a message or postback and
 			// pass the event to the appropriate handler function
 			if (webhook_event.message) {
+
 				handleMessage(sender_psid, webhook_event.message);
+
 			} else if (webhook_event.postback) {
+
 				handlePostback(sender_psid, webhook_event.postback);
+
 			}
 
 		});
@@ -63,7 +67,7 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
 
 	// your verify token. Should be a random string.
-	const VERIFY_TOKEN = "7gulC1QfabXA0tqvxi8G58d1uytym1BMUfjWrZwLju2lLwZlFuuhE1GwZiGb";
+	const VERIFY_TOKEN = '7gulC1QfabXA0tqvxi8G58d1uytym1BMUfjWrZwLju2lLwZlFuuhE1GwZiGb';
 
 	// parse the query params
 	let mode = req.query['hub.mode'];
@@ -97,7 +101,7 @@ function handleMessage(sender_psid, received_message) {
 
 		// create the payload for a basic text message
 		response = {
-			"text": `You sent the message: "${received_message.text}". Now send me an image!`
+			"text": 'You sent the message: "${received_message.text}". Now send me an image!'
 		}
 	}
 
@@ -131,7 +135,7 @@ function callSendAPI(sender_psid, response) {
 		if (!err) {
 			console.log(' (((((((( MESSAGE SENT! )))))))) ')
 		} else {
-			console.error(" (((((((( UNABLE TO SEND MESSGAE:" + err + ' )))))))) ');
+			console.error(' (((((((( UNABLE TO SEND MESSGAE:' + err + ' )))))))) ');
 		}
 	});
 }
