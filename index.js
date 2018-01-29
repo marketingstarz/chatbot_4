@@ -7,7 +7,7 @@ const
   app = express().use(body_parser.json()),
   PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
+app.listen(process.env.PORT || 1337, () => console.log(' Webhook_is_Listening '));
 
 app.post('/webhook', (req, res) => {
 
@@ -44,7 +44,7 @@ app.get('/webhook', (req, res) => {
 
   if (mode && token) {
     if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-      console.log('WEBHOOK_VERIFIED_12345');
+      console.log(' WEBHOOK_VERIFIED ');
       res.status(200).send(challenge);
     } else {
       res.sendStatus(403);
