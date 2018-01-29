@@ -57,5 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
-.gitattributes
-LICENSE
+# always need a working folder
+00working
