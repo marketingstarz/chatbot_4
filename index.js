@@ -7,7 +7,7 @@ const
   app = express().use(body_parser.json()),
   PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-app.listen(process.env.PORT || 1337, () => console.log(' Webhook_is_Listening '));
+app.listen(process.env.PORT || 1337, () => console.log(' /////////// WEBHOOK_IS_LISTENING /////////// '));
 
 app.post('/webhook', (req, res) => {
 
@@ -23,7 +23,7 @@ app.post('/webhook', (req, res) => {
 
       // Get the sender PSID
       let sender_psid = webhook_event.sender.id;
-      console.log('Sender PSID: ' + sender_psid);
+      console.log(' (((((((( Sender PSID: ' + sender_psid + ' )))))))) ');
 
     });
 
@@ -44,7 +44,7 @@ app.get('/webhook', (req, res) => {
 
   if (mode && token) {
     if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-      console.log(' WEBHOOK_VERIFIED ');
+      console.log(' /////////// WEBHOOK_VERIFIED /////////// ');
       res.status(200).send(challenge);
     } else {
       res.sendStatus(403);
