@@ -1,5 +1,5 @@
 {
-  "name": "chatbot",
+  "name": "chatbot_4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,14 +7,18 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marketingstarz/chatbot_4.git"
   },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marketingstarz/chatbot_4/issues"
+  },
+  "homepage": "https://github.com/marketingstarz/chatbot_4#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
 }
